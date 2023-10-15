@@ -6,7 +6,7 @@ import type { BuildPaths, BuildEnv } from './config/build/types'
 
 export default (env: BuildEnv) => {
   const paths: BuildPaths = {
-    entry: path.resolve(__dirname, 'src', 'index.ts'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     outpute: path.resolve(__dirname, 'build'),
     template: path.resolve(__dirname, 'public', 'index.html'),
   }
