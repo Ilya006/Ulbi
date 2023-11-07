@@ -1,7 +1,7 @@
 import {render} from 'react-dom'
-import { App } from './App'
 import { BrowserRouter } from 'react-router-dom'
-import { ThemeProvider } from './Theme/ThemeProvider'
+import { ThemeProvider } from './shared/lib/styles/ui/ThemeProvider'
+import { App } from './app/App'
 
 const root = document.getElementById('root')
 render(

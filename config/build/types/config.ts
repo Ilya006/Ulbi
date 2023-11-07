@@ -6,6 +6,7 @@ export interface BuildPaths {
   entry: string,
   outpute: string,
   template: string,
+  src: string
 }
 
 export interface BuildEnv {

@@ -1,5 +1,7 @@
-import React, { useContext } from 'react'
-import { KEY_STORAGE_THEME, ThemeContext, Themes } from './ThemeContext'
+import { useContext } from 'react'
+
+import { Themes } from '../styles/types'
+import { KEY_STORAGE_THEME, ThemeContext } from '../styles/utils/ThemeContext'
 
 interface useThemeResult {
   theme: Themes,

@@ -1,7 +1,8 @@
-import React, { FC, useMemo, useState } from 'react'
-import { KEY_STORAGE_THEME, ThemeContext, Themes } from './ThemeContext'
+import { FC, useMemo, useState } from 'react'
 
-export const defaultTheme = localStorage.getItem(KEY_STORAGE_THEME) as Themes || Themes.LIGHT
+import { ThemeContext, defaultTheme } from '../utils/ThemeContext'
+import { Themes } from '../types'
+
 
 
 export const ThemeProvider: FC = ({children}) => {
@@ -18,3 +19,4 @@ export const ThemeProvider: FC = ({children}) => {
     </ThemeContext.Provider>
   )
 }
+
