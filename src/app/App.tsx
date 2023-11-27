@@ -8,14 +8,18 @@ import { AboutPage, HomePage } from "../pages";
 import {withProviders} from './providers'
 import type {AppProps} from './types'
 
-const App: React.FC<AppProps> = () => (
-  <div className="app">
-    <Routes>
-      <Route path='/' element={<HomePage />} />
-      <Route path='/about' element={<AboutPage />} />
-    </Routes>
-  </div>
-)
+const App: React.FC<AppProps> = () => {
+  const {theme} = useTheme()
+
+  return (
+    <div className={`app ${theme}`}>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/about' element={<AboutPage />} />
+      </Routes>
+    </div>
+  )
+}
 
 const ProvidedApp: React.FC<AppProps> = withProviders(App)
 

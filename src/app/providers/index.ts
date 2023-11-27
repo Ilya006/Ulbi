@@ -1,10 +1,9 @@
-import compose from 'compose-function';
+import compose from '~/shared/lib/compose';
 
 import {withSuspense} from './withSuspense'
-import {withStyles} from './withStyles'
+import {withThemes} from './withThemes'
 
 export const withProviders = compose(
-  withStyles,
+  withThemes,
   withSuspense
 )
-

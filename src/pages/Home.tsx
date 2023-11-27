@@ -1,5 +1,9 @@
+import { useTheme } from "~/shared/lib/hooks"
+
 export default function HomePage() {
+  const {theme, toggleTheme} = useTheme()
+
   return (
-    <div>Home</div>
+    <div onClick={toggleTheme}>Home</div>
   )
 }
