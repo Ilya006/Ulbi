@@ -1,6 +1,1 @@
-export type {
-  BuildMode,
-  BuildPaths,
-  BuildEnv,
-  BuildOptions,
-} from './config'
+export type { BuildMode, BuildPaths, BuildEnv, BuildOptions } from './config';
