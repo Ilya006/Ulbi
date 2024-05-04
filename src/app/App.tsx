@@ -1,30 +1,27 @@
-import { Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
+import './styles/index.scss';
+import { classNames } from '~/shared/lib/classNames/classNames';
+import { useTheme } from '~/app/providers/ThemeProvider';
+import { AboutPage } from '~/pages/AboutPage';
+import { MainPage } from '~/pages/MainPage';
 
-import { useTheme } from '~/shared/lib/hooks';
-import '~/shared/lib/styles/index.scss';
-
-import { AboutPage, HomePage } from '../pages';
-import { withProviders } from './providers';
-import type { AppProps } from './types';
-
-const App: React.FC<AppProps> = () => {
-  const { theme } = useTheme();
-
-  const a = () => {
-    const b = theme === 'light' ? 'hellio' : 'Noo';
-  };
+const App = () => {
+  const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={`app ${theme}`}>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Routes>
+    <div className={classNames('app', {}, [theme])}>
+      <button onClick={toggleTheme}>TOGGLE</button>
+      <Link to={'/'}>Главная</Link>
+      <Link to={'/about'}>О сайте</Link>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path={'/about'} element={<AboutPage />} />
+          <Route path={'/'} element={<MainPage />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 };
 
-const ProvidedApp: React.FC<AppProps> = withProviders(App);
-
-export { ProvidedApp as App };
+export default App;
