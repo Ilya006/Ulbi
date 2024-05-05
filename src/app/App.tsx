@@ -7,6 +7,7 @@ import { MainPage } from '~/pages/MainPage';
 import { classNames } from '~/shared/lib/classNames';
 
 import './styles/index.scss';
+import { AppRoute } from './providers/route';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
@@ -16,12 +17,8 @@ const App = () => {
       <button onClick={toggleTheme}>TOGGLE</button>
       <Link to={'/'}>Главная</Link>
       <Link to={'/about'}>О сайте</Link>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path={'/about'} element={<AboutPage />} />
-          <Route path={'/'} element={<MainPage />} />
-        </Routes>
-      </Suspense>
+      <AppRoute />
+        
     </div>
   );
 };
