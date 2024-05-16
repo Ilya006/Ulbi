@@ -8,6 +8,7 @@ import { classNames } from '~/shared/lib/classNames';
 
 import './styles/index.scss';
 import { AppRoute } from './providers/route';
+import { Navbar } from '~/widget/Navbar';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
@@ -15,10 +16,8 @@ const App = () => {
   return (
     <div className={classNames('app', {}, [theme])}>
       <button onClick={toggleTheme}>TOGGLE</button>
-      <Link to={'/'}>Главная</Link>
-      <Link to={'/about'}>О сайте</Link>
+      <Navbar />
       <AppRoute />
-        
     </div>
   );
 };
