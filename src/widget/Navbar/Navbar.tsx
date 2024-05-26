@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { classNames } from '~/shared/lib/classNames';
 import { AppLink } from '~/shared/ui/AppLink';
 
@@ -14,10 +13,8 @@ export function Navbar (props: NavbarProps) {
 
   return (
     <nav className={classNames(cls.navbar, {}, [className])}>
-      <div className={cls.wrapper}>
-        <AppLink theme={AppLinkTheme.PRIMATY} className={cls.link} to={'/about'}>About</AppLink>
-        <AppLink theme={AppLinkTheme.SECONDARY} className={cls.link} to={'/'}>Main</AppLink>
-      </div>
+      <AppLink theme={AppLinkTheme.PRIMATY} className={cls.link} to={'/about'}>About</AppLink>
+      <AppLink theme={AppLinkTheme.SECONDARY} className={cls.link} to={'/'}>Main</AppLink>
     </nav>
   )
 }
