@@ -3,15 +3,19 @@ import { classNames } from '~/shared/lib/classNames'
 
 import cls from './Button.module.scss'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string
+export enum ThemeButton {
+  CLEAR = 'clear'
 }
-// БАГ: при использовании кнопки - ломает браузер Ubuntu
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string,
+  theme?: ThemeButton
+}
 export const Button = (props: ButtonProps) => {
-  const {className, children, ...restProps} = props
+  const {className, children, theme = ThemeButton.CLEAR, ...restProps} = props
 
   return (
-    <button className={classNames(cls.button, {}, [className])} {...restProps}>
+    <button className={classNames(cls.button, {}, [className, cls[theme]])} {...restProps}>
       {children}
     </button>
   )

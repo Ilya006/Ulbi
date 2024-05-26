@@ -18,11 +18,11 @@ export const ThemeSwitcher = (props: ThemeSwitcher) => {
   const { toggleTheme, theme } = useTheme()
 
   return (
-    <Button 
+    <Button
       className={classNames(cls.themeSwitcher, {}, [className])}
       onClick={toggleTheme}
     >
       {theme === Theme.LIGHT ? <LightIcon /> : <DarkIcon />}
     </Button>
   )
-}
+}// БАГ: при использовании кнопки - ломает браузер Ubuntu
