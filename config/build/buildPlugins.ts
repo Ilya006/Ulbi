@@ -4,12 +4,12 @@ import HTMLWebpackPlugin from 'html-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-import type { BuildPaths } from './types';
+import type { BuildOptions } from './types';
 
-export function buildPlugins({ template }: BuildPaths): webpack.WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HTMLWebpackPlugin({
-      template: template,
+      template: paths.template,
     }),
     new webpack.ProgressPlugin(),
     new Dotenv({
@@ -19,5 +19,8 @@ export function buildPlugins({ template }: BuildPaths): webpack.WebpackPluginIns
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthast:8].css',
     }),
+    new webpack.DefinePlugin({
+      __IS_DEV__: JSON.stringify(isDev)
+    })
   ];
 }
