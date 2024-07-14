@@ -20,6 +20,7 @@ const App = () => {
         <div className="content-page">
           <Sidebar />
           <AppRouter />
+          <h1>Hello world</h1>
         </div>
       </Suspense>
     </div>
