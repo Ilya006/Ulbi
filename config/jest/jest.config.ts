@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type {Config} from 'jest';
+import type {Config} from 'jest'
 
 const config: Config = {
   // The root directory that Jest should scan for tests and modules within
@@ -14,18 +14,18 @@ const config: Config = {
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
-    "ts",
-    "jsx",
-    "js",
-    "mjs",
-    "cjs",
-    "tsx",
-    "json",
-    "node"
+    'ts',
+    'jsx',
+    'js',
+    'mjs',
+    'cjs',
+    'tsx',
+    'json',
+    'node'
   ],
 
   // The test environment that will be used for testing
-  testEnvironment: "node",
+  testEnvironment: 'node',
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -190,6 +190,6 @@ const config: Config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
 
-export default config;
+export default config
