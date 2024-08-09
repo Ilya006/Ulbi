@@ -13,10 +13,12 @@ const App = () => {
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
+        <h1>add new bar</h1>
         <div className="content-page">
           <Sidebar />
           <AppRouter />
           <h1>Hello world</h1>
+          <h1>Hello world 2</h1>
         </div>
       </Suspense>
     </div>
